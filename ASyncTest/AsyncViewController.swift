@@ -54,7 +54,7 @@ class AsyncViewController: UIViewController {
         for i in 0...ViewCount.no{
             let imageSize = 80+i
             
-            let url = NSURL.URLWithString("http://placekitten.com/g/\(imageSize)/\(imageSize)")
+            let url = NSURL(string:"http://placekitten.com/g/\(imageSize)/\(imageSize)")
             let imageNode = ASImageNode()
             imageNode.backgroundColor = UIColor.purpleColor()
             
@@ -84,7 +84,7 @@ class AsyncViewController: UIViewController {
             let attrString = NSAttributedString(
                 string: ViewController.getCatText(i),
                 attributes: NSDictionary(
-                    object: UIFont(name: "Arial", size: 12.0),
+                    object: UIFont(name: "Arial", size: 12.0)!,
                     forKey: NSFontAttributeName))
             textNode.attributedString = attrString
             let tSize = textNode.measure(vSize)

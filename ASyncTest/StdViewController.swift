@@ -43,7 +43,7 @@ class StdViewController: UIViewController {
             //子猫のイメージを作る
             let imageSize = 80+i
             
-            let url = NSURL.URLWithString("http://placekitten.com/g/\(imageSize)/\(imageSize)")
+            let url = NSURL(string: "http://placekitten.com/g/\(imageSize)/\(imageSize)")
             let imageView = UIImageView()
             imageView.backgroundColor = UIColor.purpleColor()
             
@@ -68,7 +68,7 @@ class StdViewController: UIViewController {
             let attrString = NSAttributedString(
                 string: ViewController.getCatText(i),
                 attributes: NSDictionary(
-                    object: UIFont(name: "Arial", size: 12.0),
+                    object: UIFont(name: "Arial", size: 12.0)!,
                     forKey: NSFontAttributeName))
             textView.attributedText = attrString
             let tSize = textView.sizeThatFits(vSize)
